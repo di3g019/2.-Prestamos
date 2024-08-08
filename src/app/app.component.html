@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <h2>Calculadora de Préstamos</h2>
+  <div class="form-group">
+    <label for="monto">Monto del préstamo:</label>
+    <input type="number" id="monto" class="form-control" (input)="onMontoChange($event)">
+  </div>
+  <button class="btn btn-primary mt-2" (click)="calcularPrestamo()">Calcular</button>
+
+  <div *ngIf="cuotas !== null && valorCuota !== null">
+    <h3 class="mt-4">Resultados:</h3>
+    <p>Cuotas: {{ cuotas }}</p>
+    <p>Valor de cada cuota: ${{ valorCuota !== null ? valorCuota.toFixed(2) : '0.00' }}</p>
+  </div>
+</div>
